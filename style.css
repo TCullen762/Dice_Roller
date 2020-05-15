@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.roll{
+    padding: 10px;
+}
+
+.total{
+    padding: 10px;
+}
+
+.all_rolls{
+    padding: 10px;
+}
