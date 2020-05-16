@@ -14,16 +14,20 @@ Sum all your dice rolls and display the result in the Total area on the page usi
 
 */
 
-//let dieRolls =[]
-let rollResult = 0
-
-const rollInputBox= document.querySelector("#input_box")//selects HMTL node
+let dieRolls =[]
+let totalRolls = 0
+let mathStuff = Math.floor( Math.random(1-6)*6) //this is not producing a random
+let userInput = 0
+let rollInputBox= document.querySelector("#input_box")//selects HMTL node
 const rollButton = document.querySelector("#roll_button")
 rollButton.addEventListener("click",function(){
-   // console.log('funciton works')//test
-     if( Math.floor( Math.random() * 6) + 1){//the 6 represents number of dice sides
-         rollInputBox.innerHTML= rollResult += 1 //returns nothing but no errors
+ userInput* mathStuff +1
+ console.log(totalRolls)
+ console.log(mathStuff)
+     //if( Math.floor( Math.random() * 6) + 1){
+        totalRolls.innerHTML= rollInputBox += 1 //returns nothing but no errors
          //console.log('does the button work?')//yes it works
-}
+         //why is the innerHTML not working?
+
 }
 )
