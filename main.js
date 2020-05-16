@@ -14,15 +14,18 @@ Sum all your dice rolls and display the result in the Total area on the page usi
 
 */
 
+/* THIS IS FUCING ALLADEEN
+
 let dieRolls =[]
-let totalRolls = 0
-let mathStuff = Math.floor( Math.random(1-6)*6) //this is not producing a random
-let userInput = 0
-let rollInputBox= document.querySelector("#input_box")//selects HMTL node
+let rollInputBox = 1
+let totalDice = rollInputBox //the number selected by the user to roll
+let mathStuff = Math.floor( Math.random(1-7)*6) //this is not producing a random
+//let userInput = 0
+//let rollInputBox= document.querySelector("#input_box")//selects HMTL node
 const rollButton = document.querySelector("#roll_button")
 rollButton.addEventListener("click",function(){
- userInput* mathStuff +1
- console.log(totalRolls)
+ 
+ console.log(totalDice)
  console.log(mathStuff)
      //if( Math.floor( Math.random() * 6) + 1){
         totalRolls.innerHTML= rollInputBox += 1 //returns nothing but no errors
@@ -30,4 +33,44 @@ rollButton.addEventListener("click",function(){
          //why is the innerHTML not working?
 
 }
-)
+)*/ 
+
+let dieRolls =[]
+
+
+//let dieRollSum = dieRolls.push(Math.floor( Math.random(1-6)* 6))
+
+let rollInputBox= document.querySelector("#input_box")//selects HMTL node
+const rollButton = document.querySelector("#roll_button")
+rollButton.addEventListener("click",function(){
+    //dieRolls.push(rollInputBox)
+    dieRolls.push(Math.floor( Math.random(1-6)* 6))
+    console.log(dieRolls)
+    
+   }
+   )
+
+  //loop works but prints horizontally
+
+    let counter = 1
+    let diceRollsList = document.querySelector("#allDiceRollsList")
+    const allRollsButton = document.querySelector("#allRollsButton")
+allRollsButton.addEventListener("click",function(){
+    while(counter<= 4){
+       diceRollsList.innerHTML = dieRolls
+        counter += 1
+    }
+   }
+   )
+
+   
+   const rollOutPut = document.querySelector("#all_rolls")
+   const resetButton = document.querySelector("#resetBtn")
+  
+   resetButton.addEventListener("click", function(){
+       console.log('reset')
+    document.getElementById('all_rolls');
+
+
+   }
+   )
