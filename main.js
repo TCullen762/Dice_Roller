@@ -35,16 +35,20 @@ rollButton.addEventListener("click",function(){
 }
 )*/ 
 
+//user input is working with the math function
+//values getting pushed into the array
 let dieRolls =[]
+let randNum =  (Math.floor( Math.random(1-6)* 6))
 
 
-//let dieRollSum = dieRolls.push(Math.floor( Math.random(1-6)* 6))
-
-let rollInputBox= document.querySelector("#input_box")//selects HMTL node
+const rollInputBox= document.querySelector("#input_box")//selects HMTL node
 const rollButton = document.querySelector("#roll_button")
 rollButton.addEventListener("click",function(){
-    //dieRolls.push(rollInputBox)
-    dieRolls.push(Math.floor( Math.random(1-6)* 6))
+    const result = rollInputBox.value
+    const roll = result * randNum
+    console.log(roll)
+    dieRolls.push(roll)
+    //dieRolls.push(Math.floor( Math.random(1-6)* 6))
     console.log(dieRolls)
     
    }
@@ -63,12 +67,12 @@ allRollsButton.addEventListener("click",function(){
    }
    )
 
-   
+   //this is not working fix it
    const rollOutPut = document.querySelector("#all_rolls")
    const resetButton = document.querySelector("#resetBtn")
   
    resetButton.addEventListener("click", function(){
-       console.log('reset')
+       console.log('reset is not working')
     document.getElementById('all_rolls');
 
 
