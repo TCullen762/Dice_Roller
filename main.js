@@ -14,70 +14,61 @@ Sum all your dice rolls and display the result in the Total area on the page usi
 
 */
 
-/* THIS IS FUCING ALLADEEN
+
+
+
 
 let dieRolls =[]
-let rollInputBox = 1
-let totalDice = rollInputBox //the number selected by the user to roll
-let mathStuff = Math.floor( Math.random(1-7)*6) //this is not producing a random
-//let userInput = 0
-//let rollInputBox= document.querySelector("#input_box")//selects HMTL node
-const rollButton = document.querySelector("#roll_button")
-rollButton.addEventListener("click",function(){
- 
- console.log(totalDice)
- console.log(mathStuff)
-     //if( Math.floor( Math.random() * 6) + 1){
-        totalRolls.innerHTML= rollInputBox += 1 //returns nothing but no errors
-         //console.log('does the button work?')//yes it works
-         //why is the innerHTML not working?
-
-}
-)*/ 
-
-//user input is working with the math function
-//values getting pushed into array
-let dieRolls =[]
-let randNum = Math.floor( Math.random() * 6 ) +1
-/*problem with the math: The first number that is outputted from the function
-Only the first number is actualy random everything that follows is a multiple of the first number and not random*/
+let sumOfAllRolls = 0
 
 const rollInputBox= document.querySelector("#input_box")//selects HMTL node
 const rollButton = document.querySelector("#roll_button")
 rollButton.addEventListener("click",function(){
-    const result = rollInputBox.value
-    const roll = result * randNum
-    console.log(roll)
-    dieRolls.push(roll)
-    console.log(dieRolls)
-    console.log(dieRolls)
-    const total = document.querySelector("#totalInput")//selects HTML Node
-    total.innerHTML = roll
-   }
-   )
+    let result = rollInputBox.value //this is the number everything else is multiplied by
+   
+    let counter = 0
+    while( counter < result){
+        let randNum = Math.floor( Math.random() * 6 ) +1
+       sumOfAllRolls += randNum
+       
+        
+      
+    
+    dieRolls.push(randNum)
+  
+    const totalOutPut = document.querySelector("#totalInput")//selects HTML Node
+    totalOutPut.innerHTML = sumOfAllRolls
+    counter += 1
+    }//end while loop
+    
+    //console.log(dieRolls)
+    //console.log(sumOfAllRolls)
+     
+    
+     
+}
+)
 
-  //loop works but prints horizontally
 
-    let counter = 1
+    let counter = 0
     let diceRollsList = document.querySelector("#allDiceRollsList")
     const allRollsButton = document.querySelector("#allRollsButton")
 allRollsButton.addEventListener("click",function(){
-    while(counter<=6){
-       diceRollsList.innerHTML = dieRolls
+    while(counter<dieRolls.length){
+       diceRollsList.innerHTML += '<li>'+ dieRolls[counter] + '</li>'
         counter += 1
+       
     }
    }
    )
 
-   //this is not working fix it
-   //try array.pop.length ?
-   //const rollOutPut = document.querySelector("#all_rolls")
-   //const resetButton = document.querySelector("#resetBtn")
+   const rollOutPut = document.querySelector("#totalInput")
+    const resetButton = document.querySelector("#rstBtn")
   
-   //resetButton.addEventListener("click", function(){
-       
-    //document.querySelector('#all_rolls')
+   resetButton.addEventListener("click", function(){
+     
+rollOutPut.innerHTML = dieRolls.pop.length
+diceRollsList.innerHTML = dieRolls.pop.length 
 
-
-  // }
-   //)
+  }
+   )
