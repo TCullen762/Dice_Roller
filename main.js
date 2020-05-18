@@ -36,10 +36,11 @@ rollButton.addEventListener("click",function(){
 )*/ 
 
 //user input is working with the math function
-//values getting pushed into the array
+//values getting pushed into array
 let dieRolls =[]
-let randNum =  (Math.floor( Math.random(1-6)* 6))
-
+let randNum = Math.floor( Math.random() * 6 ) +1
+/*problem with the math: The first number that is outputted from the function
+Only the first number is actualy random everything that follows is a multiple of the first number and not random*/
 
 const rollInputBox= document.querySelector("#input_box")//selects HMTL node
 const rollButton = document.querySelector("#roll_button")
@@ -48,9 +49,10 @@ rollButton.addEventListener("click",function(){
     const roll = result * randNum
     console.log(roll)
     dieRolls.push(roll)
-    //dieRolls.push(Math.floor( Math.random(1-6)* 6))
     console.log(dieRolls)
-    
+    console.log(dieRolls)
+    const total = document.querySelector("#totalInput")//selects HTML Node
+    total.innerHTML = roll
    }
    )
 
@@ -60,7 +62,7 @@ rollButton.addEventListener("click",function(){
     let diceRollsList = document.querySelector("#allDiceRollsList")
     const allRollsButton = document.querySelector("#allRollsButton")
 allRollsButton.addEventListener("click",function(){
-    while(counter<= 4){
+    while(counter<=6){
        diceRollsList.innerHTML = dieRolls
         counter += 1
     }
@@ -68,13 +70,14 @@ allRollsButton.addEventListener("click",function(){
    )
 
    //this is not working fix it
-   const rollOutPut = document.querySelector("#all_rolls")
-   const resetButton = document.querySelector("#resetBtn")
+   //try array.pop.length ?
+   //const rollOutPut = document.querySelector("#all_rolls")
+   //const resetButton = document.querySelector("#resetBtn")
   
-   resetButton.addEventListener("click", function(){
-       console.log('reset is not working')
-    document.getElementById('all_rolls');
+   //resetButton.addEventListener("click", function(){
+       
+    //document.querySelector('#all_rolls')
 
 
-   }
-   )
+  // }
+   //)
